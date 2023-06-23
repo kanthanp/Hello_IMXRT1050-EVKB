@@ -1,0 +1,62 @@
+project:
+
+  packs:
+    - pack: ARM::CMSIS@5.9.0
+    - pack: ARM::CMSIS-Compiler@1.0.0
+    - pack: NXP::MIMXRT1052_DFP@16.0.0
+    - pack: NXP::EVKB-IMXRT1050_BSP@16.0.0
+
+  groups:
+    - group: Documentation
+      files: 
+        - file: README.md
+    - group: Application
+      files:
+        - file: hello.c
+    - group: Board
+      files:
+        - file: main.c
+        - file: retarget_stdio.c
+        - file: RTE/Device/MIMXRT1052DVL6B/MIMXRT1052xxxxx_flexspi_nor.scf
+
+  define:
+    - XIP_BOOT_HEADER_ENABLE: 1
+    - XIP_EXTERNAL_FLASH: 1
+
+  misc:
+    - Link:
+      - '--predefine="-DXIP_BOOT_HEADER_ENABLE=1"'
+
+  components:
+    - component: CMSIS:CORE
+    - component: CMSIS:RTOS2:Keil RTX5&Source
+
+    - component: CMSIS-Compiler:I/O:STDOUT&User
+
+    - component: Device:Startup
+
+    - component: NXP::Device:CMSIS:MIMXRT1052_header
+    - component: NXP::Device:CMSIS:MIMXRT1052_system
+
+    - component: NXP::Device:SDK Drivers:clock
+    - component: NXP::Device:SDK Drivers:common
+    - component: NXP::Device:SDK Drivers:gpio
+    - component: NXP::Device:SDK Drivers:iomuxc
+    - component: NXP::Device:SDK Drivers:lists
+    - component: NXP::Device:SDK Drivers:lpuart
+    - component: NXP::Device:SDK Drivers:lpuart_adapter
+    - component: NXP::Device:SDK Drivers:nic301
+    - component: NXP::Device:SDK Drivers:xip_device
+
+    - component: NXP::Device:SDK Utilities:assert
+    - component: NXP::Device:SDK Utilities:debug_console
+    - component: NXP::Device:SDK Utilities:serial_manager
+    - component: NXP::Device:SDK Utilities:serial_manager_uart
+
+    - component: NXP::Board Support:SDK Drivers:evkbimxrt1050
+    - component: NXP::Board Support:SDK Project Template:project_template&evkbimxrt1050
+
+  output:
+    type:
+      - elf
+      - hex
