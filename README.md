@@ -40,7 +40,7 @@ cbuild hello.csolution.yml
 
 ## Run the application
 
-## Using Visual Studio Code with extensions
+### Using Visual Studio Code with extensions
 
  - Connect the board's DAPLink USB to the PC (provides also power).
  - Open the 'CMSIS' view from the side bar:
@@ -48,9 +48,15 @@ cbuild hello.csolution.yml
    - Press the 'Open Serial' button and select the board's serial port with 115200 baud rate.
  - Observe the terminal output.
 
- ## Using Drag-and-drop programming and terminal
+ ### Using Drag-and-drop programming or external programmer and terminal
 
  - Connect the board's DAPLink USB to the PC (provides also power).
- - Program the image (.hex) using Drag-and-drop programming and wait until the image is programmed and starts running.
+ - Program the image (.hex) using Drag-and-drop programming or use external programmer.
  - Open terminal on the PC and connect to the board's serial port with 115200 baud rate.
  - Observe the terminal output.
+
+## Debug the application
+
+### Using Visual Studio Code with extensions
+
+Open the 'CMSIS' view from the side bar and press the 'Debug' button.
