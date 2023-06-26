@@ -11,11 +11,15 @@ project:
       files:
         - file: main.c
         - file: retarget_stdio.c
-        - file: RTE/Device/MIMXRT1052DVL6B/MIMXRT1052xxxxx_flexspi_nor.scf
 
   define:
     - XIP_BOOT_HEADER_ENABLE: 1
     - XIP_EXTERNAL_FLASH: 1
+
+  linker:
+    - define:
+      - XIP_BOOT_HEADER_ENABLE: 1
+    - script: RTE/Device/MIMXRT1052DVL6B/MIMXRT1052xxxxx_flexspi_nor.scf
 
   misc:
     - Link:
