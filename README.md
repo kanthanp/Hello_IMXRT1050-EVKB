@@ -1,4 +1,5 @@
 # Hello example for IMXRT1050-EVKB
+[![CMSIS Compliance](https://img.shields.io/github/actions/workflow/status/Arm-Examples/Hello_IMXRT1050-EVKB/verify.yml?logo=arm&logoColor=0091bd&label=CMSIS%20Compliance)](https://www.keil.arm.com/cmsis) 
 
 Simple Hello World example for NXP [IMXRT1050-EVKB](https://www.nxp.com/part/IMXRT1050-EVKB#/) Evaluation Kit.
 This example prints "Hello World" and a counter value via the standard output which is routed to the debug console through Virtual COM port.
