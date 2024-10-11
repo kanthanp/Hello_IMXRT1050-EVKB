@@ -27,7 +27,7 @@
 static void app_main (void *argument) {
   (void)argument;
 
-  for(int count = 0; count < 10; count++) {
+  for(int count = 0; count < 15; count++) {
     printf("Hello World it is Friday!!%d\r\n", count);
     osDelay(1000U);
   }
