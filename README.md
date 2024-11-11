@@ -1,5 +1,5 @@
 # Hello example for IMXRT1050-EVKB
-# Updated: 11/11/24 @ 11:40
+# Updated: 11/11/24 @ 11:57
 
 Simple Hello World example for NXP [IMXRT1050-EVKB](https://www.nxp.com/part/IMXRT1050-EVKB#/) Evaluation Kit.
 This example prints "Hello World" and a counter value via the standard output which is routed to the debug console through Virtual COM port.
